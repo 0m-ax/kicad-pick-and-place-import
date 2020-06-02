@@ -9,7 +9,7 @@ import pick_place.attribute_parser
 
 class PickAndPacePlugin(pcbnew.ActionPlugin):
     def defaults(self):
-        self.name = "Pick and Place"
+        self.name = "Pick and Place Import"
         self.category = "Tools"
         self.description = "Reads a Pick and Place file and places compoents on a PCB"
 
@@ -161,5 +161,6 @@ class PickPlaceWizardImpl(pick_place.pick_place_wizard.PickPlaceWizard):
                 else:
                     if row["side"] == pick_place.attribute_parser.Side.BOTTOM:
                         mod.Flip(mod.GetPosition())
+        pcbnew.Refresh()
 
 PickAndPacePlugin().register()

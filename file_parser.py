@@ -124,6 +124,8 @@ class SSVParser(Parser):
             if acu[-1]+1 == value:
                 return acu[:-1]+[value]
             return acu+[value]
+        if len(sorted_splits) < 5:
+            return 0, SSVParserOptions([])
         split_locations = functools.reduce(red_f,sorted_splits[1:],[sorted_splits[0]])
         if len(split_locations) > 4:
             return 0.9, SSVParserOptions(split_locations)

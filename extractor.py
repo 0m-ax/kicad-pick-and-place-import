@@ -35,6 +35,8 @@ class Extractor:
                 if self.options.has_header and i == 0:
                     i = 1
                     continue
+                if max([self.options.ref_col,self.options.x_col,self.options.y_col,self.options.side_col,self.options.rotation_col]) >= len(row):
+                    continue
                 yield {
                     "ref":row[self.options.ref_col],
                     "x":row[self.options.x_col],

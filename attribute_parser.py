@@ -123,7 +123,7 @@ class SideParser(AttriuteParser):
         if value.lower() == self.options.top_string:
             return Side.TOP
         if value.lower() == self.options.bottom_string:
-            return Side.TOP
+            return Side.BOTTOM
 
 
 class RefParserPredictor(ParserPredictor):
